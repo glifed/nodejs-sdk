@@ -1,18 +1,11 @@
-import { ServiceClientConstructor, ServiceDefinition } from '@grpc/grpc-js';
-import { GeneratedServiceClientCtor } from './types';
-
-interface ServiceEndpoint {
-    serviceIds: string[];
-    endpoint: string;
-}
-
-type ServiceEndpointsList = ServiceEndpoint[];
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getServiceClientEndpoint = exports.SERVICE_ENDPOINTS_LIST = void 0;
 // @see https://api.cloud.yandex.net/endpoints
-export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
+exports.SERVICE_ENDPOINTS_LIST = [
     {
         serviceIds: ['yandex.cloud.operation.OperationService'],
-        endpoint: 'operation.api.cloud.yandex.net:443',
+        endpoint: 'operation.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -21,7 +14,7 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.ai.llm.v1alpha.TextGenerationService',
             'yandex.cloud.ai.llm.v1alpha.TokenizerService',
         ],
-        endpoint: 'llm.api.cloud.yandex.net:443',
+        endpoint: 'llm.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -30,7 +23,7 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.backup.v1.ProviderService',
             'yandex.cloud.backup.v1.ResourceService',
         ],
-        endpoint: 'backup.api.cloud.yandex.net:443',
+        endpoint: 'backup.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -49,7 +42,7 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.compute.v1.SnapshotScheduleService',
             'yandex.cloud.compute.v1.GpuClusterService',
         ],
-        endpoint: 'compute.api.cloud.yandex.net:443',
+        endpoint: 'compute.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -62,14 +55,14 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.iam.v1.YandexPassportUserAccountService',
             'yandex.cloud.iam.v1.awscompatibility.AccessKeyService',
         ],
-        endpoint: 'iam.api.cloud.yandex.net:443',
+        endpoint: 'iam.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.resourcemanager.v1.CloudService',
             'yandex.cloud.resourcemanager.v1.FolderService',
         ],
-        endpoint: 'resource-manager.api.cloud.yandex.net:443',
+        endpoint: 'resource-manager.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -123,7 +116,7 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.mdb.opensearch.v1.ClusterService',
             'yandex.cloud.mdb.opensearch.v1.ResourcePresetService',
         ],
-        endpoint: 'mdb.api.cloud.yandex.net:443',
+        endpoint: 'mdb.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -132,7 +125,7 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.dataproc.v1.ResourcePresetService',
             'yandex.cloud.dataproc.v1.SubclusterService',
         ],
-        endpoint: 'dataproc.api.cloud.yandex.net:443',
+        endpoint: 'dataproc.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -143,7 +136,7 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.vpc.v1.SubnetService',
             'yandex.cloud.vpc.v1.GatewayService',
         ],
-        endpoint: 'vpc.api.cloud.yandex.net:443',
+        endpoint: 'vpc.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -154,38 +147,38 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.containerregistry.v1.ScannerService',
             'yandex.cloud.containerregistry.v1.ScanPolicyService',
         ],
-        endpoint: 'container-registry.api.cloud.yandex.net:443',
+        endpoint: 'container-registry.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.loadbalancer.v1.NetworkLoadBalancerService',
             'yandex.cloud.loadbalancer.v1.TargetGroupService',
         ],
-        endpoint: 'load-balancer.api.cloud.yandex.net:443',
+        endpoint: 'load-balancer.api.yandexcloud.kz:443',
     },
     {
         serviceIds: ['yandex.cloud.serverless.functions.v1.FunctionService'],
-        endpoint: 'serverless-functions.api.cloud.yandex.net:443',
+        endpoint: 'serverless-functions.api.yandexcloud.kz:443',
     },
     {
         serviceIds: ['yandex.cloud.serverless.triggers.v1.TriggerService'],
-        endpoint: 'serverless-triggers.api.cloud.yandex.net:443',
+        endpoint: 'serverless-triggers.api.yandexcloud.kz:443',
     },
     {
         serviceIds: ['yandex.cloud.serverless.apigateway.v1.ApiGatewayService'],
-        endpoint: 'serverless-apigateway.api.cloud.yandex.net:443',
+        endpoint: 'serverless-apigateway.api.yandexcloud.kz:443',
     },
     {
         serviceIds: ['yandex.cloud.serverless.containers.v1.ContainerService'],
-        endpoint: 'serverless-containers.api.cloud.yandex.net:443',
+        endpoint: 'serverless-containers.api.yandexcloud.kz:443',
     },
     {
         serviceIds: ['yandex.cloud.serverless.mdbproxy.v1.ProxyService'],
-        endpoint: 'mdbproxy.api.cloud.yandex.net:443',
+        endpoint: 'mdbproxy.api.yandexcloud.kz:443',
     },
     {
         serviceIds: ['yandex.cloud.serverless.apigateway.websocket.v1.ConnectionService'],
-        endpoint: 'apigateway-connections.api.cloud.yandex.net:443',
+        endpoint: 'apigateway-connections.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -193,7 +186,7 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.k8s.v1.NodeGroupService',
             'yandex.cloud.k8s.v1.VersionService',
         ],
-        endpoint: 'mks.api.cloud.yandex.net:443',
+        endpoint: 'mks.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -201,7 +194,7 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.logging.v1.ExportService',
             'yandex.cloud.logging.v1.SinkService',
         ],
-        endpoint: 'logging.api.cloud.yandex.net:443',
+        endpoint: 'logging.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -223,14 +216,14 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.ydb.v1.ResourcePresetService',
             'yandex.cloud.ydb.v1.StorageTypeService',
         ],
-        endpoint: 'ydb.api.cloud.yandex.net:443',
+        endpoint: 'ydb.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.iot.devices.v1.DeviceService',
             'yandex.cloud.iot.devices.v1.RegistryService',
         ],
-        endpoint: 'iot-devices.api.cloud.yandex.net:443',
+        endpoint: 'iot-devices.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -238,26 +231,26 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.iot.devices.v1.DeviceDataService',
             'yandex.cloud.iot.devices.v1.RegistryDataService',
         ],
-        endpoint: 'iot-data.api.cloud.yandex.net:443',
+        endpoint: 'iot-data.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.iot.broker.v1.BrokerService',
         ],
-        endpoint: 'iot-broker.api.cloud.yandex.net:443',
+        endpoint: 'iot-broker.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.monitoring.v3.DashboardService',
         ],
-        endpoint: 'monitoring.api.cloud.yandex.net:443',
+        endpoint: 'monitoring.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.dataproc.manager.v1.JobService',
             'yandex.cloud.dataproc.manager.v1.DataprocManagerService',
         ],
-        endpoint: 'dataproc-manager.api.cloud.yandex.net:443',
+        endpoint: 'dataproc-manager.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -265,7 +258,7 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.kms.v1.asymmetricencryption.AsymmetricEncryptionKeyService',
             'yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKeyService',
         ],
-        endpoint: 'kms.api.cloud.yandex.net:443',
+        endpoint: 'kms.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -277,33 +270,33 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
     },
     {
         serviceIds: ['yandex.cloud.endpoint.ApiEndpointService'],
-        endpoint: 'api.cloud.yandex.net:443',
+        endpoint: 'api.yandexcloud.kz:443',
     },
     {
         serviceIds: ['yandex.cloud.ai.translate.v2.TranslationService'],
-        endpoint: 'translate.api.cloud.yandex.net:443',
+        endpoint: 'translate.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.ai.vision.v1.VisionService',
             'yandex.cloud.ai.vision.v2.ImageClassifierService',
         ],
-        endpoint: 'vision.api.cloud.yandex.net:443',
+        endpoint: 'vision.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.ai.ocr.v1.TextRecognitionService',
             'yandex.cloud.ai.ocr.v1.TextRecognitionAsyncService',
         ],
-        endpoint: 'ocr.api.cloud.yandex.net:443',
+        endpoint: 'ocr.api.yandexcloud.kz:443',
     },
     {
         serviceIds: ['yandex.cloud.ai.stt.v2.SttService'],
-        endpoint: 'transcribe.api.cloud.yandex.net:443',
+        endpoint: 'transcribe.api.yandexcloud.kz:443',
     },
     {
         serviceIds: ['speechkit.tts.v3.Synthesizer'],
-        endpoint: 'tts.api.cloud.yandex.net:443',
+        endpoint: 'tts.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -313,7 +306,7 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.apploadbalancer.v1.TargetGroupService',
             'yandex.cloud.apploadbalancer.v1.VirtualHostService',
         ],
-        endpoint: 'alb.api.cloud.yandex.net:443',
+        endpoint: 'alb.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -323,7 +316,7 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.billing.v1.ServiceService',
             'yandex.cloud.billing.v1.SkuService',
         ],
-        endpoint: 'billing.api.cloud.yandex.net:443',
+        endpoint: 'billing.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -334,19 +327,19 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.cdn.v1.ResourceService',
             'yandex.cloud.cdn.v1.RawLogsService',
         ],
-        endpoint: 'cdn.api.cloud.yandex.net:443',
+        endpoint: 'cdn.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.certificatemanager.v1.CertificateService',
         ],
-        endpoint: 'certificate-manager.api.cloud.yandex.net:443',
+        endpoint: 'certificate-manager.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.certificatemanager.v1.CertificateContentService',
         ],
-        endpoint: 'data.certificate-manager.api.cloud.yandex.net:443',
+        endpoint: 'data.certificate-manager.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -358,32 +351,32 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.datasphere.v2.ProjectService',
             'yandex.cloud.datasphere.v2.CommunityService',
         ],
-        endpoint: 'datasphere.api.cloud.yandex.net:443',
+        endpoint: 'datasphere.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.datatransfer.v1.EndpointService',
             'yandex.cloud.datatransfer.v1.TransferService',
         ],
-        endpoint: 'datatransfer.api.cloud.yandex.net:443',
+        endpoint: 'datatransfer.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.dns.v1.DnsZoneService',
         ],
-        endpoint: 'dns.api.cloud.yandex.net:443',
+        endpoint: 'dns.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.lockbox.v1.SecretService',
         ],
-        endpoint: 'lockbox.api.cloud.yandex.net:443',
+        endpoint: 'lockbox.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.lockbox.v1.PayloadService',
         ],
-        endpoint: 'payload.lockbox.api.cloud.yandex.net:443',
+        endpoint: 'payload.lockbox.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -392,7 +385,7 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.marketplace.licensemanager.v1.LockService',
             'yandex.cloud.marketplace.metering.v1.ImageProductUsageService',
         ],
-        endpoint: 'marketplace.api.cloud.yandex.net:443',
+        endpoint: 'marketplace.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -404,13 +397,13 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.organizationmanager.v1.GroupMappingService',
             'yandex.cloud.organizationmanager.v1.SshCertificateService',
         ],
-        endpoint: 'organization-manager.api.cloud.yandex.net:443',
+        endpoint: 'organization-manager.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'yandex.cloud.storage.v1.BucketService',
         ],
-        endpoint: 'storage.api.cloud.yandex.net:443',
+        endpoint: 'storage.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
@@ -422,30 +415,26 @@ export const SERVICE_ENDPOINTS_LIST: ServiceEndpointsList = [
             'yandex.cloud.loadtesting.agent.v1.TrailService',
             'yandex.cloud.loadtesting.api.v1.AgentService',
         ],
-        endpoint: 'loadtesting.api.cloud.yandex.net:443',
+        endpoint: 'loadtesting.api.yandexcloud.kz:443',
     },
     {
         serviceIds: [
             'speechkit.stt.v3.AsyncRecognizer',
             'speechkit.stt.v3.Recognizer',
         ],
-        endpoint: 'stt.api.cloud.yandex.net:443',
+        endpoint: 'stt.api.yandexcloud.kz:443',
     },
 ];
-
-export const getServiceClientEndpoint = <T extends ServiceDefinition>(generatedClientCtor: GeneratedServiceClientCtor<T>): string => {
-    const clientCtor = generatedClientCtor as unknown as ServiceClientConstructor;
-    const serviceName: string = clientCtor.serviceName as string;
-
+const getServiceClientEndpoint = (generatedClientCtor) => {
+    const clientCtor = generatedClientCtor;
+    const serviceName = clientCtor.serviceName;
     if (!serviceName) {
         throw new Error('Unable to retrieve serviceName of provided service client class');
     }
-
-    const endpointItem = SERVICE_ENDPOINTS_LIST.find((item) => item.serviceIds.includes(serviceName));
-
+    const endpointItem = exports.SERVICE_ENDPOINTS_LIST.find((item) => item.serviceIds.includes(serviceName));
     if (!endpointItem) {
         throw new Error(`Endpoint for service ${serviceName} is no defined`);
     }
-
     return endpointItem.endpoint;
 };
+exports.getServiceClientEndpoint = getServiceClientEndpoint;
